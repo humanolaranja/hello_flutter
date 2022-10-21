@@ -19,7 +19,7 @@ Future<List<Pokemon>> fetchPokemons() async {
 Future<PokemonDetails> fetchPokemon(String url) async {
   final response = await Dio().get(url);
 
-  if (response.statusCode == 201) {
+  if (response.statusCode == 200) {
     return PokemonDetails.fromJson(response.data);
   } else {
     throw Exception('Failed to load pokemon image');
